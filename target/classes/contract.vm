@@ -1,0 +1,19 @@
+package ${package}.${service};
+
+import ${package}.${entity}.${name};
+
+import java.util.List;
+
+public interface I${name}Service{
+
+    public ${name} loadById(Object id) throws Exception;
+
+    public long insert(${name} entity) throws Exception;
+
+    public void update(${name} entity, Object example) throws Exception;
+
+    public List<${name}> loadAll()throws Exception;
+
+    public void deleteById(Object id) throws Exception;
+
+}

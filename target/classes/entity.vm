@@ -1,0 +1,28 @@
+package ${package}.${entity};
+
+#set($hasDate=0)
+#foreach($column in $columns)
+#if($column.javaType=='Date' && $hasDate==0)
+import java.util.Date;
+#set($hasDate=1)
+#end
+#end
+
+public class ${name}{
+
+    private static final long serialVersionUID = 1L;
+
+#foreach($column in $columns)
+    private ${column.javaType} ${column.javaFieldName};
+#end
+
+#foreach(${column} in ${columns})
+    public void set${column.javaFieldNameUF}(${column.javaType} ${column.javaFieldName}){
+        this.${column.javaFieldName} = ${column.javaFieldName};
+    }
+
+    public ${column.javaType} get${column.javaFieldNameUF}(){
+        return this.${column.javaFieldName};
+    }
+
+#end}

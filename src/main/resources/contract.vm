@@ -1,0 +1,19 @@
+package ${package}.${service};
+
+import ${package}.${entity}.${name};
+
+import java.util.List;
+
+public interface I${name}Service{
+
+    ${name} loadById(Object id);
+
+    long insert(${name} entity);
+
+    void update(${name} entity, Object example);
+
+    List<${name}> loadAll();
+
+    void deleteById(Object id);
+
+}

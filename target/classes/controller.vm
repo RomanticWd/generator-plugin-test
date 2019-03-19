@@ -1,0 +1,28 @@
+package ${package}.${controller};
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+import ${package}.${service}.I${name}Service;
+
+import ${package}.${entity}.${name};
+
+@RestController
+public class ${name}Controller {
+
+    @Autowired
+    private I${name}Service ${name}Service;
+
+    @RequestMapping(value = "/get${name}ById",method = RequestMethod.POST,consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    public ${name} get${name}ById(){
+
+        long id = 1;
+
+        return ${name}Service.loadById(id);
+    }
+
+
+}

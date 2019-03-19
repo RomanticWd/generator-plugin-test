@@ -1,0 +1,45 @@
+package ${package}.${serviceImpl};
+
+import ${package}.${entity}.${name};
+import ${package}.${service}.I${name}Service;
+import ${package}.${dao}.${name}Dao;
+
+import org.springframework.stereotype.Service;
+
+import javax.annotation.Resource;
+
+import java.util.List;
+
+
+@Service
+public class ${name}ServiceImpl implements I${name}Service {
+
+    @Resource
+    private ${name}Dao dao;
+
+    @Override
+    public ${name} loadById(Object id) {
+        return dao.selectByPrimaryKey(id);
+    }
+
+    @Override
+    public long insert(${name} entity) {
+        return dao.insert(entity);
+    }
+
+    @Override
+    public void update(${name} entity, Object example) {
+        dao.updateByExample(entity, example);
+    }
+
+    @Override
+    public List<${name}> loadAll() {
+        return dao.selectAll();
+    }
+
+    @Override
+    public void deleteById(Object id) {
+        dao.deleteByPrimaryKey(id);
+    }
+
+}
